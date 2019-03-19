@@ -1,11 +1,12 @@
+var players;
 function getPlayerbyId(id, players){
     var player;
     for (var i = 0; i < players.length; i++) {
-        if (players[i].id == id) {
+        if (players[i].playerCode == id) {
             player = players[i];
         }
     }
-    console.log(player);
+
     return player;
 }
 
@@ -15,7 +16,8 @@ function  getRandomPlayers() {
         method : "GET",
         success: function(data, state) {
             if (data.success) {
-                var players = data.response;
+                 players = data.response;
+                 
                 updateUI(players)
             } else {
                 alert("Errore");
@@ -27,6 +29,7 @@ function  getRandomPlayers() {
             console.log("error", error)
         }
     });
+
     return players;
 }
 
@@ -69,7 +72,7 @@ function playerSelection(players, me) {
     idMistake = $('#mistake > span.content');
     idTwoPerc = $('#twoPerc > span.content');
     idThreePerc = $('#threePerc > span.content');
-
+   console.log(player);
     idDOM.text(player.id);
     idPoints.text(player.points);
     idBounce.text(player.bounce);
@@ -81,7 +84,7 @@ function playerSelection(players, me) {
 
 function sidebarShow() {
     var sidebar = $(".sidebar");
-    sidebar.toggleClass("active");
+    sidebar.addClass("active");
 }
 
 
@@ -94,9 +97,10 @@ function init() {
     input.on("change" , function() {
         var me = $(this);
         playerSelection(players, me);
-        var sidebar = $(".sidebar");
-        sidebar.click(sidebarShow);
+
     });
+    var sidebar = $(".container");
+    sidebar.click(sidebarShow);
 }
 
 
