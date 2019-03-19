@@ -57,7 +57,7 @@ function clearClick() {
     idDOM.text(player.playerCode);
     idPoints.text(player.points);
     idBounce.text(player.rebounds);
-    idMistake.text(player.mistake);
+    idMistake.text(player.fouls);
     idTwoPerc.text(player.twoPoints);
     idThreePerc.text(player.threePoints);
 }
@@ -76,7 +76,7 @@ function playerSelection(players, me) {
     idDOM.text(player.playerCode);
     idPoints.text(player.points);
     idBounce.text(player.rebounds);
-    idMistake.text(player.mistake);
+    idMistake.text(player.fouls);
     idTwoPerc.text(player.twoPoints);
     idThreePerc.text(player.threePoints);
 }
@@ -88,7 +88,7 @@ function sidebarShow() {
 
  setTimeout(function() {
    sidebar.removeClass("active");
- }, 5000)
+ }, 10000)
 }
 
 
