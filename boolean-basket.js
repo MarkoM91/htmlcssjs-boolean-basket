@@ -26,8 +26,7 @@ function  getRandomPlayers() {
        if (data.success) {
 
          var players = data.response;
-         console.log(players);
-       }
+         }
 
 
 
