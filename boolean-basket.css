@@ -15,7 +15,7 @@
   color: rgb(80, 133, 33);
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
 
   width: 100vw;
   height: 100vh;
@@ -23,6 +23,12 @@
   padding: 50px;
 
   background: #dedede;
+}
+
+.sidebar{
+
+  width: 100px;
+  height: 100%;
 }
 
 .input-container {
