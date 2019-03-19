@@ -116,7 +116,7 @@ function sidebarShow() {
 
   var sidebar = $(".sidebar");
 
-  sidebar.toggleClass("active");
+  sidebar.fadeIn();
 
 }
 
