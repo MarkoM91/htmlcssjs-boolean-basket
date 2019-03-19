@@ -15,25 +15,31 @@
   color: rgb(80, 133, 33);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
 
   width: 100vw;
   height: 100vh;
 
-  padding: 50px;
+
 
   background: #dedede;
 }
 
 .sidebar{
 
-  width: 100px;
+  width: 33%;
   height: 100%;
+  position: relative;
+  right: 360px;
+
+  background: blue;
+  border-right: 1px solid black;
 }
 
 .input-container {
   padding: 100px 0;
+  height: 100%;
 }
 
 .input-container > * {

@@ -9,7 +9,9 @@ var player;
       player = players[i];
      }
    }
+   console.log(player);
 return player;
+
 
 }
 
