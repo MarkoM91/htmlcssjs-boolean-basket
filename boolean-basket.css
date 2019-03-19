@@ -35,6 +35,12 @@
 
   background: blue;
   border-right: 1px solid black;
+  display: none;
+}
+.active{
+
+
+  display: block;
 }
 
 .input-container {

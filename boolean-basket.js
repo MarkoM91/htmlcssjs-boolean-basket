@@ -112,7 +112,13 @@ function playerSelection(players, me) {
 }
 
 
+function sidebarShow() {
 
+  var sidebar = $(".sidebar");
+
+  sidebar.toggleClass("active");
+
+}
 
 
 function init() {
@@ -128,6 +134,9 @@ input.on("change" , function() {
 
 var me = $(this);
 playerSelection(players, me);
+
+var sidebar = $(".sidebar");
+ sidebar.click(sidebarShow);
 
 });
 }
