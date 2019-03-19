@@ -12,7 +12,11 @@
 }
 
 .container {
-  color: rgb(80, 133, 33);
+  color: white;
+  text-shadow: 10px 10px 10px black;
+  background-image: url("download.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +27,7 @@
 
 
 
-  background: #dedede;
+
 }
 
 .sidebar{
