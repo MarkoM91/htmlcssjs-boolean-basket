@@ -68,7 +68,7 @@ return player;
 }
 
 
-function  getRandomPLayers() {
+function  getRandomPlayers() {
 
  var player = getRandomPlayer();
 
@@ -77,23 +77,18 @@ function  getRandomPLayers() {
       method : "GET",
       success: function(data, state) {
 
-     if (data.success) {
+       if (data.success) {
 
-        var players = data.response;
-      }
+         var players = data.response;
+       }
 
 
-      if (players.length == 17) {
+       if (players.length == 17) {
         for (var i = 0; i < players.length; i++) {
           players.push(player);
         }
-        
-      }
 
-
-
-
-
+       }
 
     },
     error: function(request, state, error) {
@@ -104,10 +99,10 @@ function  getRandomPLayers() {
 
   });
 
-
+return players;
 }
 
-}
+
 
 function updateUI(players) {
 
