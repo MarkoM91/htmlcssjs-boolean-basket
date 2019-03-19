@@ -26,7 +26,11 @@ function  getRandomPlayers() {
        if (data.success) {
 
          var players = data.response;
-         }
+         updateUI(players)
+       } else {
+
+         alert("Errore");
+       }
 
 
 
