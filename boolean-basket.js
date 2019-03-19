@@ -72,7 +72,7 @@ function playerSelection(players, me) {
     idMistake = $('#mistake > span.content');
     idTwoPerc = $('#twoPerc > span.content');
     idThreePerc = $('#threePerc > span.content');
-   
+
     idDOM.text(player.playerCode);
     idPoints.text(player.points);
     idBounce.text(player.rebounds);
@@ -85,7 +85,13 @@ function playerSelection(players, me) {
 function sidebarShow() {
     var sidebar = $(".sidebar");
     sidebar.addClass("active");
+
+ setTimeout(function() {
+   sidebar.removeClass("active");
+ }, 5000)
 }
+
+
 
 
 function init() {
@@ -99,8 +105,10 @@ function init() {
         playerSelection(players, me);
 
     });
-    var sidebar = $(".container");
-    sidebar.click(sidebarShow);
+    var container = $(".container");
+    container.click(sidebarShow);
+
+
 }
 
 
