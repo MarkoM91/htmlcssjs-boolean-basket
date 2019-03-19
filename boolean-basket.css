@@ -14,7 +14,8 @@
 .container {
   color: rgb(80, 133, 33);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
 
   width: 100vw;

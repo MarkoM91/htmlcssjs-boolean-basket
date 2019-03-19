@@ -1,59 +1,5 @@
-function getRandom(min, max) {
-
-  return Math.floor(Math.random() * (max-min + 1)) + min;
-}
-
-function getRandomChar() {
-
-  var rndInt = getRandom(65, 90);
-  var rndChar = String.fromCharCode(rndInt);
 
 
-  return(rndChar);
-}
-
-function getRandomId() {
-var rndChar = "";
-var rndVal = "";
-for (var i = 0; i < 3; i++) {
-  rndChar += getRandomChar();
-  rndVal += getRandom(0,9)
-}
-var rndId = rndChar + rndVal;
-return rndId;
-}
-
-
-
-function getRandomPlayer() {
-
-  var twoPerc = getRandom(0, 100);
-  var threePerc = 100 - twoPerc;
-  var player = {
-
-  "id" : getRandomId(),
-  "points" : getRandom(0, 30),
-  "bounce" : getRandom(0, 15),
-  "mistake" :getRandom(0, 5),
-  "twoPerc" : twoPerc,
-  "threePerc" : threePerc
-}
-
-return player;
-}
-
-function isPresent(player, players) {
-
-  var finded = false;
-
-  for (var i = 0; i < players.length; i++) {
-
-    if (player.id == id) {
-      finded = true;
-    }
-  }
-  return  finded;
-}
 
 function getPlayerbyId(id, players){
 
@@ -70,7 +16,7 @@ return player;
 
 function  getRandomPlayers() {
 
- var player = getRandomPlayer();
+
 
     $.ajax({
       url : "https://www.boolean.careers/api/array/basket?n=17",
@@ -80,15 +26,11 @@ function  getRandomPlayers() {
        if (data.success) {
 
          var players = data.response;
+         console.log(players);
        }
 
 
-       if (players.length == 17) {
-        for (var i = 0; i < players.length; i++) {
-          players.push(player);
-        }
 
-       }
 
     },
     error: function(request, state, error) {
@@ -170,9 +112,7 @@ function playerSelection(players, me) {
 
 function init() {
 
-getRandomChar();
-var res = getRandomPlayers();
-console.log(res);
+
 var players = getRandomPlayers();
 updateUI(players);
 var clearButton = $('#clear-btn');
