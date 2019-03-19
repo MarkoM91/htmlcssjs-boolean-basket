@@ -12,8 +12,7 @@
 }
 
 .container {
-  color: white;
-  text-shadow: 10px 10px 10px black;
+  color: black;
   background-image: url("download.jpg");
   background-size: cover;
   background-position: center;
@@ -37,7 +36,7 @@
   position: relative;
   right: 360px;
 
-  background: blue;
+  background: rgb(118, 23, 5);
   border-right: 1px solid black;
   display: none;
 
@@ -61,4 +60,6 @@
 .player-wrapper {
 
   padding-top: 30px;
+  background: white;
+  padding: 0 25px;
 }
