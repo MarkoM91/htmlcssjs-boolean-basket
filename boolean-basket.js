@@ -17,7 +17,7 @@ function  getRandomPlayers() {
         success: function(data, state) {
             if (data.success) {
                  players = data.response;
-                 
+
                 updateUI(players)
             } else {
                 alert("Errore");
@@ -54,7 +54,7 @@ function clearClick() {
     idTwoPerc = $('#twoPerc > span.content');
     idThreePerc = $('#threePerc > span.content');
 
-    idDOM.text(player.id);
+    idDOM.text(player.playerCode);
     idPoints.text(player.points);
     idBounce.text(player.bounce);
     idMistake.text(player.mistake);
@@ -73,7 +73,7 @@ function playerSelection(players, me) {
     idTwoPerc = $('#twoPerc > span.content');
     idThreePerc = $('#threePerc > span.content');
    console.log(player);
-    idDOM.text(player.id);
+    idDOM.text(player.playerCode);
     idPoints.text(player.points);
     idBounce.text(player.bounce);
     idMistake.text(player.mistake);
