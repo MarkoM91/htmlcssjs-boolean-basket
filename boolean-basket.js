@@ -56,10 +56,10 @@ function clearClick() {
 
     idDOM.text(player.playerCode);
     idPoints.text(player.points);
-    idBounce.text(player.bounce);
+    idBounce.text(player.rebounds);
     idMistake.text(player.mistake);
-    idTwoPerc.text(player.twoPerc);
-    idThreePerc.text(player.threePerc);
+    idTwoPerc.text(player.twoPoints);
+    idThreePerc.text(player.threePoints);
 }
 
 function playerSelection(players, me) {
@@ -72,13 +72,13 @@ function playerSelection(players, me) {
     idMistake = $('#mistake > span.content');
     idTwoPerc = $('#twoPerc > span.content');
     idThreePerc = $('#threePerc > span.content');
-   console.log(player);
+   
     idDOM.text(player.playerCode);
     idPoints.text(player.points);
-    idBounce.text(player.bounce);
+    idBounce.text(player.rebounds);
     idMistake.text(player.mistake);
-    idTwoPerc.text(player.twoPerc);
-    idThreePerc.text(player.threePerc);
+    idTwoPerc.text(player.twoPoints);
+    idThreePerc.text(player.threePoints);
 }
 
 
