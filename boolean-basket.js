@@ -88,7 +88,7 @@ function sidebarShow() {
 
  setTimeout(function() {
    sidebar.removeClass("active");
- }, 10000)
+ }, 12000)
 }
 
 
