@@ -15,9 +15,10 @@ function getPlayerbyId(id, players){
 
 function  getRandomPlayers() {
 
+  var quantity = prompt("Quanti giocatori vuoi?");
     $.ajax({
 
-        url : "https://www.boolean.careers/api/array/basket?n=17",
+        url : "https://www.boolean.careers/api/array/basket?n=" + quantity,
         method : "GET",
         success: function(data, state) {
 
