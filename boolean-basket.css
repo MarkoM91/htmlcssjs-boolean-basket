@@ -12,10 +12,12 @@
 }
 
 .container {
+
   color: black;
   background-image: url("download.jpg");
   background-size: cover;
   background-position: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,31 +25,28 @@
 
   width: 100vw;
   height: 100vh;
-
-
-
-
 }
 
 .sidebar{
 
   width: 33%;
   height: 100%;
+
   position: relative;
   right: 360px;
 
   background: rgb(118, 23, 5);
   border-right: 1px solid black;
   display: none;
-
 }
-.active{
 
+.active{
 
   display: block;
 }
 
 .input-container {
+
   padding: 30px 75px;
   height: 100%;
 }
@@ -62,9 +61,4 @@
   padding-top: 30px;
   background: white;
   padding: 0 25px;
-}
-
-.player-wrapper * {
-
-  
 }

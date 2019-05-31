@@ -1,44 +1,39 @@
 var players;
-
 function getPlayerbyId(id, players){
 
-    var player;
-    for (var i = 0; i < players.length; i++) {
+   var player;
+   for (var i = 0; i < players.length; i++) {
 
-        if (players[i].playerCode == id) {
-
-            player = players[i];
-        }
-    }
-    return player;
+       if (players[i].playerCode == id) {
+           player = players[i];
+       }
+   }
+   return player;
 }
 
 function  getRandomPlayers() {
 
   var quantity = prompt("Quanti giocatori vuoi?");
-    $.ajax({
+  $.ajax({
 
-        url : "https://www.boolean.careers/api/array/basket?n=" + quantity,
-        method : "GET",
-        success: function(data, state) {
+      url : "https://www.boolean.careers/api/array/basket?n=" + quantity,
+      method : "GET",
+      success: function(data, state) {
 
-            if (data.success) {
-
-                 players = data.response;
-                 updateUI(players)
-            } else {
-
-                alert("Errore");
-            }
-        },
-        error: function(request, state, error) {
-            console.log("request", request)
-            console.log("state", state)
-            console.log("error", error)
-        }
-    });
-
-    return players;
+          if (data.success) {
+               players = data.response;
+               updateUI(players)
+          } else {
+               alert("Errore");
+          }
+      },
+      error: function(request, state, error) {
+          console.log("request", request)
+          console.log("state", state)
+          console.log("error", error)
+      }
+  });
+  return players;
 }
 
 function updateUI(players) {
@@ -48,11 +43,8 @@ function updateUI(players) {
     for (var i = 0; i < players.length; i++) {
 
         var option = document.createElement("option");
-
         option.value = players[i].playerCode;
-
         option.innerHTML =  players[i].playerCode;
-
         datalist.append(option);
     }
 }
@@ -97,33 +89,42 @@ function playerSelection(players, me) {
     idThreePerc.text(player.threePoints);
 }
 
-
 function sidebarShow() {
 
-    var sidebar = $(".sidebar");
-    sidebar.addClass("active");
+  var sidebar = $(".sidebar");
+  sidebar.addClass("active");
 
- setTimeout(function() {
-   sidebar.removeClass("active");
- }, 8000)
+  //setTimeout(function() {
+  //  sidebar.removeClass("active");
+  //}, 8000)
 }
 
+function sidebarHide() {
+
+  var sidebar = $(".sidebar");
+  sidebar.removeClass("active");
+
+  //setTimeout(function() {
+  //  sidebar.removeClass("active");
+  //}, 8000)
+}
 
 function init() {
+  getRandomPlayers();
+  var clearButton = $('#clear-btn');
+  clearButton.click(clearClick);
 
-    getRandomPlayers();
-    var clearButton = $('#clear-btn');
-    clearButton.click(clearClick);
+  var input = $('#usr-input');
+  input.on("change" , function() {
+      var me = $(this);
+      playerSelection(players, me);
 
-    var input = $('#usr-input');
-    input.on("change" , function() {
-        var me = $(this);
-        playerSelection(players, me);
+  });
+  var container = $(".container");
+  container.click(sidebarShow);
 
-    });
-    var container = $(".container");
-    container.click(sidebarShow);
+  var sidebar = $(".sidebar");
+  sidebar.click(sidebarHide);
 }
-
 
 $(document).ready(init);
